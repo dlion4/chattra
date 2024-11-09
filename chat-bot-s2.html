@@ -1,0 +1,1213 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-bs-theme="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Page Title -->
+    <title>ChatBot | Chattra | Chat Application HTML Template</title>
+    <!-- Page Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bundle.css?v1310">
+    <link rel="stylesheet" href="assets/css/app.css?v1310">
+   
+
+    <style>
+        .opt-tools {
+            height: 100%;
+            width: 25px;
+            right: -21px;
+            position: absolute;
+            border: 1px solid #e8e8e8;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+          }
+          .opt-edit,
+          .opt-trash {
+            height: 50%;
+            line-height: 25px;
+            text-align: center;
+            font-size: 13px;
+            cursor: pointer;
+          }
+          .opt-edit {
+            border-bottom: 1px solid #e8e8e8;
+            border-top-right-radius: 8px;
+            background-color: #fff;
+            color: #ff8e00;
+          }
+          
+          .opt-edit:hover {
+            color: #fff;
+            background-color: #ff8e00;
+          }
+          .opt-trash {
+            border-bottom-right-radius: 8px;
+            background-color: #fff;
+            color: #cc0000;
+          }
+          .opt-trash:hover {
+            color: #fff;
+            background-color: #cc0000;
+          }
+          
+          /* LOCK HEADER AND FIRST COLUMN */
+          .table td,
+          .table th {
+            padding: 5px !important;
+          }
+          th:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 1030;
+          }
+          td:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 1010;
+          }
+          thead th {
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+          }
+          /* ---------- END (LOCK HEADER AND FIRST COLUMN ) --------- */
+          
+          .datetimepicker {
+            width: 70% !important;
+            height: 70% !important;
+          }
+          
+          .cal-container {
+            max-width: 900px;
+            max-height: 500px;
+            overflow: auto;
+            margin: auto;
+          }
+          .cal-table {
+            position: relative;
+            border: solid #ebebeb;
+            border-width: 0 1px 0 0;
+            overscroll-behavior: contain;
+          }
+          .cal-thead {
+            top: 0px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.04);
+          }
+          
+          .cal-viewmonth {
+            font-size: 16px;
+            background: #fdfdfd;
+            width: 150px;
+            height: 50px;
+          }
+          .cal-toprow {
+            width: 182px;
+            min-width: 182px;
+            color: #3e5569;
+            background-color: #f7f9fb !important;
+            border: 1px solid #ebebeb !important;
+          }
+          
+          .cal-viewmonth,
+          .cal-toprow {
+            font-weight: 700 !important;
+            text-align: center;
+            vertical-align: middle !important;
+          }
+          
+          .cal-userinfo {
+            height: 80px;
+            box-shadow: 20px 0 50px rgba(0, 0, 0, 0.05);
+          }
+          
+          .cal-tbody .cal-userinfo {
+            min-width: 150px !important;
+            text-align: right;
+            color: hsla(210, 5%, 40%, 1);
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.03em;
+            background: #fdfdfd;
+            padding: 0.3em;
+            border: 1px solid #ebebeb;
+          }
+          
+          .cal-usersheader {
+            height: 20px;
+            box-shadow: 20px 0 50px rgba(0, 0, 0, 0.05);
+            min-width: 150px !important;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 0.03em;
+            padding: 0.3em;
+          }
+          
+          .weekend {
+            background-color: #b5b5b5;
+          }
+          .drag {
+            z-index: 10;
+            cursor: all-scroll;
+          }
+          .span-info {
+            display: inline-block;
+            padding: 0.25em 0.4em;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            width: 25px;
+            background-color: red;
+            cursor: pointer;
+          }
+          
+          .ui-draggable-dragging {
+            z-index: 9999 !important;
+          }
+          
+          .cal-usercounter {
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            text-align: right;
+            border-radius: 0px;
+            border: 2px thick red;
+          }
+          
+          .cal-userbadge {
+            border-radius: 0;
+            font-weight: 600;
+            font-size: 11px;
+          }
+          
+          /* USER TASKS */
+          .details {
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid #ebecee;
+            padding: 0px 0px 5px 10px;
+            margin: 2px;
+            z-index: 1;
+          }
+          
+          .details-uren {
+            font-size: 12px;
+            color: #333;
+            font-weight: 500;
+            margin: 0;
+            right: 0px;
+            text-align: right;
+            padding-right: 10px;
+          }
+          
+          .details-task {
+            margin-top: 5px;
+            margin-bottom: 2px;
+            font-size: 12px;
+            padding: 2px 5px;
+            font-weight: 600;
+            line-height: 1.4;
+            border-radius: 2px;
+            width: 94%;
+          }
+          
+    </style>
+    
+  
+</head>
+
+<body class="tyn-body">
+    <div class="tyn-root">
+        <nav class="tyn-appbar">
+            <div class="tyn-appbar-wrap">
+                <div class="tyn-appbar-logo">
+                    <a class="tyn-logo" href="index.html">
+                        <svg viewbox="0 0 43 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M37.2654 14.793C37.2654 14.793 45.0771 20.3653 41.9525 29.5311C41.9525 29.5311 41.3796 31.1976 39.0361 34.4264L42.4732 37.9677C42.4732 37.9677 43.3065 39.478 41.5879 39.9987H24.9229C24.9229 39.9987 19.611 40.155 14.8198 36.9782C14.8198 36.9782 12.1638 35.2076 9.76825 31.9787L18.6215 32.0308C18.6215 32.0308 24.298 31.9787 29.7662 28.3333C35.2344 24.6878 37.4217 18.6988 37.2654 14.793Z" fill="#60A5FA"></path>
+                            <path d="M34.5053 12.814C32.2659 1.04441 19.3506 0.0549276 19.3506 0.0549276C8.31004 -0.674164 3.31055 6.09597 3.31055 6.09597C-4.24076 15.2617 3.6751 23.6983 3.6751 23.6983C3.6751 23.6983 2.99808 24.6357 0.862884 26.5105C-1.27231 28.3854 1.22743 29.3748 1.22743 29.3748H17.3404C23.4543 28.7499 25.9124 27.3959 25.9124 27.3959C36.328 22.0318 34.5053 12.814 34.5053 12.814ZM19.9963 18.7301H9.16412C8.41419 18.7301 7.81009 18.126 7.81009 17.3761C7.81009 16.6261 8.41419 16.022 9.16412 16.022H19.9963C20.7463 16.022 21.3504 16.6261 21.3504 17.3761C21.3504 18.126 20.7358 18.7301 19.9963 18.7301ZM25.3708 13.314H9.12245C8.37253 13.314 7.76843 12.7099 7.76843 11.96C7.76843 11.21 8.37253 10.6059 9.12245 10.6059H25.3708C26.1207 10.6059 26.7248 11.21 26.7248 11.96C26.7248 12.7099 26.1103 13.314 25.3708 13.314Z" fill="#2563EB"></path>
+                        </svg>
+                    </a>
+                </div><!-- .tyn-appbar-logo -->
+                <div class="tyn-appbar-content">
+                    <ul class="tyn-appbar-nav tyn-appbar-nav-start">
+                        <li class="tyn-appbar-item">
+                            <a class="tyn-appbar-link" href="chat-bot-welcome.html" aria-label="Home">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 10L12 3L21 10V20A1 1 0 0 1 20 21H4A1 1 0 0 1 3 20V10Z" fill="#60A5FA"/>
+                                    <path d="M9 21V12H15V21" fill="#2563EB"/>
+                                </svg>
+                                <span class="d-none">Home</span>
+                            </a>
+                        </li>
+                        <li class="tyn-appbar-item">
+                            <a class="tyn-appbar-link" href="index.html" aria-label="Chats">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 2H4A2 2 0 0 0 2 4V14A2 2 0 0 0 4 16H6V20L11 16H20A2 2 0 0 0 22 14V4A2 2 0 0 0 20 2Z" fill="#60A5FA"/>
+                                    <path d="M7 7H17M7 11H14" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span class="d-none">Chats</span>
+                            </a>
+                        </li>
+                        <!--
+<li class="tyn-appbar-item">
+                            <a class="tyn-appbar-link" href="contacts.html" aria-label="Contacts">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2A10 10 0 1 0 12 22A10 10 0 0 0 12 2Z" fill="#60A5FA"/>
+                                    <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12ZM12 14C9.33 14 5 15.34 5 18V20H19V18C19 15.34 14.67 14 12 14Z" fill="#2563EB"/>
+                                </svg>
+                                <span class="d-none">Contacts</span>
+                            </a>
+                        </li>
+-->
+                        <li class="tyn-appbar-item d-none d-sm-inline-flex">
+                            <a class="tyn-appbar-link" href="chat-bot-s2.html" aria-label="Shift">
+                                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2A10 10 0 1 0 12 22A10 10 0 0 0 12 2Z" fill="#60A5FA"/>
+                                    <path d="M12 6V12L16 14" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                
+                                <span class="d-none">Shift</span>
+                            </a>
+                        </li>
+                        <li class="tyn-appbar-item d-none d-sm-inline-flex">
+                            <a class="tyn-appbar-link position-relative" href="pricing.html" aria-label="Payment">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="4" width="56" height="48" rx="2" ry="2" fill="#60A5FA"/>
+                                    <path d="M2 10H22" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6 14H10" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="badge bg-primary position-absolute rounded-pill top-0 end-0 mt-n1 me-n1">2</div>
+                                <span class="d-none">Payment</span>
+                            </a>
+                            
+                        </li><!-- .tyn-appbar-item -->
+                        <!-- <li class="tyn-appbar-item d-none d-sm-inline-flex">
+                            <a class="tyn-appbar-link" href="stories.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-subtract" viewbox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path>
+                                </svg>
+                                <span class="d-none">Stories</span>
+                            </a>
+                        </li>.tyn-appbar-item -->
+                    </ul><!-- .tyn-appbar-nav xxxxxxxxxxxxxxxxxxxxxxxxx-->
+                    <ul class="tyn-appbar-nav tyn-appbar-nav-end">
+                        <li class="tyn-appbar-item dropdown">
+                            <a class="tyn-appbar-link dropdown-toggle" data-bs-toggle="dropdown" href="#" data-bs-offset="0,10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-fill" viewbox="0 0 16 16">
+                                    <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"></path>
+                                </svg><!-- grid-fill -->
+                                <span class="d-none">Menu</span>
+                            </a><!-- .dropdown-toggle -->
+                            <div class="dropdown-menu dropdown-menu-auto dropdown-menu-end">
+                                <ul class="tyn-list-links">
+                                    <li>
+                                        <h6 class="tyn-list-links-heading">Quick Links</h6>
+                                    </li><!-- li -->
+                                    <li>
+                                        <a href="chat-bot-welcome.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open-fill" viewbox="0 0 16 16">
+                                                <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15zM11 2h.5a.5.5 0 0 1 .5.5V15h-1zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"></path>
+                                            </svg><!-- door-open-fill -->
+                                            <span>Home</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    
+                                    <li>
+                                        <a href="index.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-text-fill" viewbox="0 0 16 16">
+                                                <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M4.5 5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z"></path>
+                                            </svg><!-- chat-text-fill -->
+                                            <span>Chats</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <!-- <li>
+                                        <a href="contacts.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewbox="0 0 16 16">
+                                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"></path>
+                                            </svg>
+                                            <span>Contacts</span>
+                                        </a>
+                                    </li>li -->
+                                    <!-- <li>
+                                        <a href="stories.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-subtract" viewbox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path>
+                                            </svg> 
+                                            <span>Stories</span>
+                                        </a>
+                                    </li>li -->
+                                   
+                                    <li>
+                                        <a href="pricing.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewbox="0 0 16 16">
+                                                <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5"></path>
+                                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
+                                            </svg><!-- person-bounding-box -->
+                                            <span>Payments</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    
+                                    <li>
+                                        <a href="chat-bot-s2.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewbox="0 0 16 16">
+                                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
+                                                <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"></path>
+                                            </svg><!-- person-fill-up -->
+                                            <span>Shift</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <li>
+                                        <a href="faq.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-octagon-fill" viewbox="0 0 16 16">
+                                                <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353zM5.496 6.033a.237.237 0 0 1-.24-.247C5.35 4.091 6.737 3.5 8.005 3.5c1.396 0 2.672.73 2.672 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.105a.25.25 0 0 1-.25.25h-.81a.25.25 0 0 1-.25-.246l-.004-.217c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.803 0-1.253.478-1.342 1.134-.018.137-.128.25-.266.25h-.825zm2.325 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927"></path>
+                                            </svg><!-- question-octagon-fill -->
+                                            <span>Faqs</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <!-- <li>
+                                        <h6 class="tyn-list-links-heading">UI Components</h6>
+                                    </li>li -->
+                                    <!-- <li>
+                                        <a href="ui-chat-replies.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-text-fill" viewbox="0 0 16 16">
+                                                <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353zM3.5 3h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1 0-1m0 2.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1 0-1m0 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1"></path>
+                                            </svg>
+                                            <span>Chat Replaies</span>
+                                        </a>
+                                    </li> -->
+                                    <!-- <li>
+                                        <a href="ui-usecase-modals.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-front" viewbox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm5 10v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2v5a2 2 0 0 1-2 2z"></path>
+                                            </svg>
+                                            <span>UseCase Modals</span>
+                                        </a>
+                                    </li> -->
+                                    <!-- <li>
+                                        <a href="ui-elements.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-safe-fill" viewbox="0 0 16 16">
+                                                <path d="M9.778 9.414A2 2 0 1 1 6.95 6.586a2 2 0 0 1 2.828 2.828"></path>
+                                                <path d="M2.5 0A1.5 1.5 0 0 0 1 1.5V3H.5a.5.5 0 0 0 0 1H1v3.5H.5a.5.5 0 0 0 0 1H1V12H.5a.5.5 0 0 0 0 1H1v1.5A1.5 1.5 0 0 0 2.5 16h12a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 14.5 0zm3.036 4.464 1.09 1.09a3 3 0 0 1 3.476 0l1.09-1.09a.5.5 0 1 1 .707.708l-1.09 1.09c.74 1.037.74 2.44 0 3.476l1.09 1.09a.5.5 0 1 1-.707.708l-1.09-1.09a3 3 0 0 1-3.476 0l-1.09 1.09a.5.5 0 1 1-.708-.708l1.09-1.09a3 3 0 0 1 0-3.476l-1.09-1.09a.5.5 0 1 1 .708-.708M14 6.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 1 0"></path>
+                                            </svg>
+                                            <span>Misc Elements</span>
+                                        </a>
+                                    </li> -->
+                                </ul><!-- .tyn-list-links -->
+                            </div><!-- .dropdown-menu -->
+                        </li><!-- .tyn-appbar-item -->
+                        <li class="tyn-appbar-item">
+                            <a class="tyn-appbar-link dropdown-toggle" data-bs-toggle="dropdown" href="#" data-bs-offset="0,10" data-bs-auto-close="outside">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app-indicator" viewbox="0 0 16 16">
+                                    <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1z"></path>
+                                    <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
+                                </svg><!-- app-indicator -->
+                                <span class="d-none">Notifications</span>
+                            </a><!-- .dropdown-toggle -->
+                            <div class="dropdown-menu dropdown-menu-rg dropdown-menu-end">
+                                <div class="dropdown-head">
+                                    <div class="title">
+                                        <h6>Notifications</h6>
+                                    </div>
+                                    <ul class="nav nav-tabs nav-tabs-line">
+                                        <li class="nav-item">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#notifications-unread" type="button"> Unread </button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#notifications-all" type="button"> All </button>
+                                        </li>
+                                    </ul>
+                                </div><!-- .dropdown-head -->
+                                <div class="dropdown-gap">
+                                    <ul class="tyn-media-list gap gap-3">
+                                        <li>
+                                            <div class="tyn-media-group">
+                                                <div class="tyn-media tyn-circle">
+                                                    <img src="images/avatar/1.jpg" alt="">
+                                                </div>
+                                                <div class="tyn-media-col">
+                                                    <div class="tyn-media-row">
+                                                        <span class="message"><strong>Phillip Burke</strong> Sent message</span>
+                                                    </div>
+                                                    <div class="tyn-media-row">
+                                                        <span class="meta">10 Hours ago</span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .tyn-media-group -->
+                                        </li><!-- li -->
+                                        <li>
+                                            <div class="tyn-media-group align-items-start">
+                                                <div class="tyn-media tyn-circle">
+                                                    <img src="images/avatar/2.jpg" alt="">
+                                                </div>
+                                                <div class="tyn-media-col">
+                                                    <div class="tyn-media-row">
+                                                        <span class="message">Missed call from <strong>Romy Schulte</strong></span>
+                                                    </div>
+                                                    <div class="tyn-media-row has-dot-sap">
+                                                        <span class="meta">2 days ago</span>
+                                                    </div>
+                                                    <div class="tyn-media-row">
+                                                        <ul class="tyn-btn-inline gap gap-2 pt-1">
+                                                            <li>
+                                                                <button class="btn btn-md btn-light">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewbox="0 0 16 16">
+                                                                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"></path>
+                                                                    </svg><!-- telephone -->
+                                                                    <span>Call Back</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .tyn-media-group -->
+                                        </li><!-- li -->
+                                        <li>
+                                            <div class="tyn-media-group align-items-start">
+                                                <div class="tyn-media tyn-circle">
+                                                    <img src="images/avatar/3.jpg" alt="">
+                                                </div>
+                                                <div class="tyn-media-col">
+                                                    <div class="tyn-media-row">
+                                                        <span class="message"><strong>Thomas Poulain</strong> Added You</span>
+                                                    </div>
+                                                    <div class="tyn-media-row has-dot-sap">
+                                                        <span class="meta">1 weeks ago</span>
+                                                    </div>
+                                                    <div class="tyn-media-row">
+                                                        <ul class="tyn-btn-inline gap gap-3 pt-1">
+                                                            <li>
+                                                                <button class="btn btn-md btn-primary">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewbox="0 0 16 16">
+                                                                        <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"></path>
+                                                                        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"></path>
+                                                                    </svg><!-- check2-circle -->
+                                                                    <span>Accept</span>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-md btn-light">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewbox="0 0 16 16">
+                                                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
+                                                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"></path>
+                                                                    </svg><!-- x-circle -->
+                                                                    <span>Reject</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .tyn-media-group -->
+                                        </li><!-- li -->
+                                        <li>
+                                            <div class="tyn-media-group">
+                                                <div class="tyn-media tyn-circle">
+                                                    <img src="images/avatar/4.jpg" alt="">
+                                                </div>
+                                                <div class="tyn-media-col">
+                                                    <div class="tyn-media-row">
+                                                        <span class="message"><strong>Gabriel Schmitz</strong> Sent message</span>
+                                                    </div>
+                                                    <div class="tyn-media-row has-dot-sap">
+                                                        <span class="meta">1 Months ago</span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .tyn-media-group -->
+                                        </li><!-- li -->
+                                    </ul><!-- .tyn-media-list -->
+                                </div><!-- .dropdown-gap -->
+                            </div><!-- .dropdown-menu -->
+                        </li><!-- .tyn-appbar-item -->
+                        <li class="tyn-appbar-item">
+                            <a class="d-inline-flex dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#" data-bs-offset="0,10">
+                                <div class="tyn-media tyn-size-lg tyn-circle">
+                                    <img src="images/avatar/3.jpg" alt="">
+                                </div>
+                            </a><!-- .dropdown-toggle -->
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <div class="dropdown-gap">
+                                    <div class="tyn-media-group">
+                                        <div class="tyn-media tyn-size-lg">
+                                            <img src="images/avatar/3.jpg" alt="">
+                                        </div>
+                                        <div class="tyn-media-col">
+                                            <div class="tyn-media-row">
+                                                <h6 class="name">Marie George</h6>
+                                                <div class="indicator varified">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewbox="0 0 16 16">
+                                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+                                                    </svg><!-- check-circle-fill -->
+                                                </div>
+                                            </div>
+                                            <div class="tyn-media-row has-dot-sap">
+                                                <p class="content">Liked that disco music</p>
+                                            </div>
+                                        </div><!-- .tyn-media-col -->
+                                    </div><!-- .tyn-media-group -->
+                                </div><!-- .dropdown-gap -->
+                                <div class="dropdown-gap">
+                                    <div class="d-flex gap gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewbox="0 0 16 16">
+                                            <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"></path>
+                                        </svg><!-- moon-fill -->
+                                        <div>
+                                            <h6>Darkmode</h6>
+                                            <ul class="d-flex align-items-center gap gap-3">
+                                                <li class="inline-flex">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="themeMode" id="dark" value="dark">
+                                                        <label class="form-check-label small" for="dark"> On </label>
+                                                    </div>
+                                                </li><!-- li -->
+                                                <li class="inline-flex">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="themeMode" id="light" value="light" checked="">
+                                                        <label class="form-check-label small" for="light"> Off </label>
+                                                    </div>
+                                                </li><!-- li -->
+                                            </ul><!-- ul -->
+                                        </div><!-- div -->
+                                    </div><!-- .d-flex -->
+                                </div><!-- .dropdown-gap -->
+                                <ul class="tyn-list-links">
+                                    <li>
+                                        <a href="profile.html#profile-index">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewbox="0 0 16 16">
+                                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"></path>
+                                            </svg><!-- person -->
+                                            <span>Profile</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <li>
+                                        <a href="profile.html#profile-settings">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewbox="0 0 16 16">
+                                                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"></path>
+                                                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"></path>
+                                            </svg><!-- gear -->
+                                            <span>Settings</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <li>
+                                        <a href="profile.html#profile-change-password">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock" viewbox="0 0 16 16">
+                                                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2M3 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1z"></path>
+                                            </svg><!-- unlock -->
+                                            <span>Change Password</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <li class="dropdown-divider"></li><!-- li -->
+                                    <li>
+                                        <a href="login.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewbox="0 0 16 16">
+                                                <path d="M7.5 1v7h1V1z"></path>
+                                                <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812"></path>
+                                            </svg><!-- power -->
+                                            <span>Log Out</span>
+                                        </a>
+                                    </li><!-- li -->
+                                </ul><!-- .tyn-list-links -->
+                            </div><!-- .dropdown-menu -->
+                        </li><!-- .tyn-appbar-item -->
+                    </ul><!-- .tyn-appbar-nav -->
+                </div><!-- .tyn-appbar-content -->
+            </div><!-- .tyn-appbar-wrap -->
+        </nav><!-- .tyn-appbar -->
+        <div class="tyn-content tyn-content-full-height tyn-chatbot tyn-chatbot-page has-aside-base">
+            <div class="tyn-aside tyn-aside-base">
+                <div class="tyn-aside-head">
+                    <div class="tyn-aside-head-text">
+                        <h3 class="tyn-aside-title tyn-title">Chat Shifts</h3>
+                        <span class="tyn-subtext">All Time-Zones </span>
+                    </div><!-- .tyn-aside-head-text -->
+                    <div class="tyn-aside-head-tools">
+                        <ul class="tyn-list-inline gap gap-3">
+                            <li><a class="btn btn-icon btn-light btn-md btn-pill" href="chat-bot-welcome.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewbox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"></path>
+                                    </svg><!-- plus-lg -->
+                                </a></li>
+                        </ul>
+                    </div><!-- .tyn-aside-head-tools -->
+                </div><!-- .tyn-aside-head -->
+                <div class="tyn-aside-body" data-simplebar="">
+                    <ul class="tyn-aside-list">
+                        <li class="tyn-aside-item tyn-aside-item-bubbly  js-toggle-main active">
+                            <td class="ui-droppable" data-date="29/7/2020" data-userid="4">
+                                <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12409" data-userid="4" style="border-left: 5px solid rgb(30, 137, 90); position: relative;">
+                                  <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Day Shift</h3>
+                                  <div class="details-uren">
+                                    00:00 - 00:00
+                                  </div>
+                                </div>
+                              </td>
+                        </li><!-- .tyn-aside-item -->
+                        <li class="tyn-aside-item tyn-aside-item-bubbly  js-toggle-main">
+                            <td class="ui-droppable" data-date="29/7/2020" data-userid="4">
+                                <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12409" data-userid="4" style="border-left: 5px solid rgb(30, 137, 90); position: relative;">
+                                  <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Day Shift</h3>
+                                  <div class="details-uren">
+                                    00:00 - 00:00
+                                  </div>
+                                </div>
+                              </td>
+                        </li><!-- .tyn-aside-item -->
+                        <li class="tyn-aside-item tyn-aside-item-bubbly  js-toggle-main">
+                            <td class="ui-droppable" data-date="29/7/2020" data-userid="4">
+                                <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12409" data-userid="4" style="border-left: 5px solid rgb(30, 137, 90); position: relative;">
+                                  <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Day Shift</h3>
+                                  <div class="details-uren">
+                                    00:00 - 00:00
+                                  </div>
+                                </div>
+                              </td>
+                        </li><!-- .tyn-aside-item -->
+                        
+                    </ul><!-- .tyn-aside-list -->
+                </div><!-- .tyn-aside-body -->
+                <div class="tyn-aside-foot">
+                    <div class="w-100">
+                        <ul class="row gx-3">
+                            <li class="col-6">
+                                <a href="pricing.html" class="btn btn-light tyn-size-lg w-100 flex-column py-2 pt-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-up" viewbox="0 0 16 16">
+                                        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"></path>
+                                        <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"></path>
+                                    </svg><!-- person-up -->
+                                    <span class="small text-nowrap mt-n1">Book Shift</span>
+                                </a>
+                            </li><!-- .col -->
+                            <li class="col-6">
+                                <button class="btn btn-light tyn-size-lg w-100 flex-column py-2 pt-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewbox="0 0 16 16">
+                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"></path>
+                                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"></path>
+                                    </svg><!-- trash -->
+                                    <span class="small text-nowrap mt-n1">Clear Archive</span>
+                                </button>
+                            </li><!-- .col -->
+                        </ul><!-- .row -->
+                    </div><!-- w-100 -->
+                </div><!-- .tyn-aside-head -->
+            </div><!-- .tyn-aside -->
+            <div class="tyn-main" id="tynMain">
+                <ul class="tyn-list-inline d-md-none translate-middle-x position-absolute start-50 z-1">
+                    <li>
+                        <button class="btn btn-icon btn-pill btn-white js-toggle-main">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewbox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"></path>
+                            </svg><!-- x-lg -->
+                        </button>
+                    </li>
+                </ul><!-- .tyn-list-inline -->
+                <div class="tyn-chat-body my-4 px-4 js-scroll-to-end" id="tynBotBody">
+                    <div class="container px-0">
+                        <div class="tyn-qa tyn-qa-bubbly" id="tynBotReply">
+                            
+                            <div class="row justify-content-center align-items-center" style="padding-bottom:25px;">
+                                <div style="padding-top: 20px; text-align:center;">
+                                  <div>
+                                    <h2>Shift Calendar/Scheduler</h2>
+                                  </div>
+                                  
+                                </div>
+                              
+                              </div>
+                              
+                              <!-- DISPLAY USER SCHEDULER-->
+                              <div class="table-responsive">
+                                <div data-parse="1595877840000" id="calplaceholder" style="max-height: 500px; margin-bottom: 0;">
+                                  <div class="cal-sectionDiv">
+                                    <table class="table table-striped table-bordered">
+                                      <thead class="cal-thead">
+                                        <tr>
+                                          <th class="cal-viewmonth" id="changemonth">Nov 2024</th>
+                                          <th class="cal-toprow">Wednesday 1</th>
+                                          <th class="cal-toprow">Thursday 2</th>
+                                          <th class="cal-toprow">Friday 3</th>
+                                          <th class="cal-toprow weekend">Saturday 4</th>
+                                          <th class="cal-toprow weekend">Sunday 5</th>
+                                          <th class="cal-toprow">Monday 6</th>
+                                          <th class="cal-toprow">Tuesday 7</th>
+                                          <th class="cal-toprow">Wednesday 8</th>
+                                          <th class="cal-toprow">Thursday 9</th>
+                                          <th class="cal-toprow">Friday 10</th>
+                                          <th class="cal-toprow weekend">Saturday 11</th>
+                                          <th class="cal-toprow weekend">Sunday 12</th>
+                                          <th class="cal-toprow">Monday 13</th>
+                                          <th class="cal-toprow">Tuesday 14</th>
+                                          <th class="cal-toprow">Wednesday 15</th>
+                                          <th class="cal-toprow">Thursday 16</th>
+                                          <th class="cal-toprow">Friday 17</th>
+                                          <th class="cal-toprow weekend">Saturday 18</th>
+                                          <th class="cal-toprow weekend">Sunday 19</th>
+                                          <th class="cal-toprow">Monday 20</th>
+                                          <th class="cal-toprow">Tuesday 21</th>
+                                          <th class="cal-toprow">Wednesday 22</th>
+                                          <th class="cal-toprow">Thursday 23</th>
+                                          <th class="cal-toprow">Friday 24</th>
+                                          <th class="cal-toprow weekend">Saturday 25</th>
+                                          <th class="cal-toprow weekend">Sunday 26</th>
+                                          <th class="cal-toprow">Monday 27</th>
+                                          <th class="cal-toprow">Tuesday 28</th>
+                                          <th class="cal-toprow">Wednesday 29</th>
+                                          <th class="cal-toprow">Thursday 30</th>
+                                          <th class="cal-toprow">Friday 31</th>
+                                        </tr>
+                              
+                                      </thead>
+                                      <tbody class="cal-tbody">
+                                        <tr id="h16">
+                                          <td class="cal-usersheader" style="color:#000; background-color:#389fe8; padding: 0px;">Time zone</td>
+                                          <td colspan="31" style="color:#FFFFFF; background-color:#389fe8;"></td>
+                                        </tr>
+                                        <tr id="u1">
+                                          <td class="cal-userinfo">
+                                            <span><b style="text-decoration: underline">Nairobi Time zone<span></span></span>
+                                            <div class="cal-usercounter">
+                                              <span class="cal-userbadge badge badge-light">1EA ZONE</span><span class="cal-userbadge badge badge-warning">134:36</span>
+                                            </div>
+                                            <div class="cal-userarrows">
+                                              <i class="up mdi mdi-arrow-up-bold"></i><i class="down mdi mdi-arrow-down-bold"></i>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="1/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="13956" data-userid="1" style="border-left: 5px solid rgb(81, 255, 0); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #000000">Training</h3>
+                                              <div class="details-uren">
+                                                15:00 - 16:30
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="2/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="13957" data-userid="1" style="border-left: 5px solid rgb(121, 32, 32); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Day Shift</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="3/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="13959" data-userid="1" style="border-left: 5px solid rgb(175, 0, 0); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Sick</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="weekend ui-droppable" data-date="4/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="13958" data-userid="1" style="border-left: 5px solid rgb(36, 115, 171); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Late shift</h3>
+                                              <div class="details-uren">
+                                                07:30 - 16:30
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="weekend ui-droppable" data-date="5/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12179" data-userid="1" style="border-left: 5px solid rgb(30, 137, 90); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Day Shift</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="6/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12316" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="7/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12117" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="8/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12336" data-userid="1" style="border-left: 5px solid rgb(36, 115, 171); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Late shift</h3>
+                                              <div class="details-uren">
+                                                12:00 - 19:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="9/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12346" data-userid="1" style="border-left: 5px solid rgb(189, 0, 0); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Extra shift</h3>
+                                              <div class="details-uren">
+                                                13:00 - 20:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="10/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12137" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                              
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="weekend ui-droppable" data-date="11/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12366" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="weekend ui-droppable" data-date="12/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12376" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="13/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12386" data-userid="1" style="border-left: 5px solid rgb(36, 115, 171); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Late shift</h3>
+                                              <div class="details-uren">
+                                                17:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="14/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12396" data-userid="1" style="border-left: 5px solid rgb(30, 137, 90); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Day Shift</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="15/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12406" data-userid="1" style="border-left: 5px solid rgb(30, 137, 90); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Day Shift</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="16/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12416" data-userid="1" style="border-left: 5px solid rgb(189, 0, 0); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Extra shift</h3>
+                                              <div class="details-uren">
+                                                20:00 - 03:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="17/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12426" data-userid="1" style="border-left: 5px solid rgb(36, 115, 171); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Late shift</h3>
+                                              <div class="details-uren">
+                                                21:00 - 04:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="weekend ui-droppable" data-date="18/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12436" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="weekend ui-droppable" data-date="19/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12446" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="20/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12456" data-userid="1" style="border-left: 5px solid rgb(36, 115, 171); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Late shift</h3>
+                                              <div class="details-uren">
+                                                00:00 - 07:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="21/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12466" data-userid="1" style="border-left: 5px solid rgb(30, 137, 90); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Day Shift</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="22/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12476" data-userid="1" style="border-left: 5px solid rgb(36, 115, 171); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Late shift</h3>
+                                              <div class="details-uren">
+                                                02:00 - 09:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="23/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="13960" data-userid="1" style="border-left: 5px solid rgb(175, 0, 0); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Sick</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="24/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12496" data-userid="1" style="border-left: 5px solid rgb(36, 115, 171); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Late shift</h3>
+                                              <div class="details-uren">
+                                                04:00 - 11:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="weekend ui-droppable" data-date="25/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12506" data-userid="1" style="border-left: 5px solid rgb(36, 115, 171); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Late shift</h3>
+                                              <div class="details-uren">
+                                                05:00 - 12:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="weekend ui-droppable" data-date="26/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12516" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="27/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12526" data-userid="1" style="border-left: 5px solid rgb(36, 115, 171); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Late shift</h3>
+                                              <div class="details-uren">
+                                                07:00 - 14:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="28/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="13950" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="29/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12546" data-userid="1" style="border-left: 5px solid rgb(36, 115, 171); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Late shift</h3>
+                                              <div class="details-uren">
+                                                09:00 - 16:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="30/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="13949" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td class="ui-droppable" data-date="31/7/2020" data-userid="1">
+                                            <div class="drag details ui-draggable ui-draggable-handle" data-taskid="12536" data-userid="1" style="border-left: 5px solid rgb(126, 126, 126); position: relative;">
+                                              <h3 class="details-task" style=" background: rgb(37 99 235); color: #FFFFFF">Rest</h3>
+                                              <div class="details-uren">
+                                                00:00 - 00:00
+                                              </div>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                       
+                                        
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <!-- DISPLAY MODAL: EDIT -->
+                              <div class="modal fade" id="edittask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Edit Task</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div id="modal-edit" class="modal-body">
+                                      <div class="input-group mb-2 text-center">
+                                        <i style="color:red">Edit box is only for preview purposes and does not save any data.</i>
+                                      </div>
+                                      <div class="input-group mb-2">
+                                        <label for="cono1" class="col-sm-2 text-left control-label col-form-label">Task:</label>
+                                        <input type="text" class="form-control" id="taak" placeholder="Taak">
+                                      </div>
+                                      <div class="input-group mb-2">
+                                        <label for="cono1" class="col-sm-2 text-left control-label col-form-label">Date:</label>
+                                        <input id="date" class="form-control taskstart" placeholder="dd/mm/yyyy" type="text">
+                                      </div>
+                                      <div class="input-group">
+                                        <div class="form-group" style="width:125px; margin-left:15px; margin-right:5px;">
+                                          <label for="cono1" class="col-sm-3 text-left control-label col-form-label" style="padding-left: 0px;">Text:</label>
+                                          <input type="text" id="ktxt" data-jscolor="" class="form-control" name="ctxt" value="" onchange="changeColor('ctxt', this.value);">
+                                        </div>
+                                        <div class="form-group" style="width:125px; margin-left:5px; margin-right:5px;">
+                                          <label for="cono1" class="col-sm-3 text-left control-label col-form-label" style="padding-left: 0px;">Background:</label>
+                                          <input type="text" id="kbg" data-jscolor="" class="form-control" name="cbg" value="" onchange="changeColor('cbg', this.value);">
+                                        </div>
+                                        <div class="form-group" style="width:175px; margin-left:5px;">
+                                          <label for="cono1" class="col-sm-5 text-left control-label col-form-label" style="padding-left: 0px;">Preview:</label>
+                                          <div id="demotaak1" data-taskid="3" class="form-control details" style="border-left:5px solid #959595; position:relative; height: 50px;">
+                                            <h3 id="demotaak2" class="details-task" style="background:#959595; color:#FFFFFF">Example</h3>
+                                            <p class="details-uren">08:00 - 16:30</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              </div>
+                              
+                              <!-- DISPLAY MODAL: DELETE -->
+                              <div class="modal fade" id="deletetask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                              
+                                    <div id="modal-delete" class="modal-body" style="text-align: center;">
+                                    </div>
+                                    <div class="modal-footer">
+                                      <input id="taskdelid" type="hidden" value="">
+                                      <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+                                      <button id="confdelete" type="button" class="btn btn-danger">Yes</button>
+                              
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                           
+                            
+                            
+
+                        </div><!-- .tyn-qa -->
+                    </div><!-- .container -->
+                </div><!-- .tyn-chat-body -->
+                <div class="tyn-chat-form border-0 px-4">
+                    <div class="container px-0">
+                        <div class="ps-3 pe-4 py-3 bg-white mb-4 rounded-3">
+                            
+                        </div>
+                    </div><!-- .container -->
+                </div><!-- .tyn-chat-form -->
+            </div><!-- .tyn-main -->
+        </div><!-- .tyn-content -->
+    </div><!-- .tyn-root -->
+    <!-- Page Scripts -->
+    <script src="assets/js/bundle.js?v1310"></script>
+    <script src="assets/js/app.js?v1310"></script>
+    <script>
+        // Drag tasks around
+$(".drag").draggable({
+    revert: "invalid",
+    start: function (e, ui) {
+      // Date from where task was dragged from
+      $(this).data("oldDate", $(this).parent().data("date"));
+    }
+  });
+  
+  // Select drop area for Tasks (only droppable on TD which have "data-date" attribute)
+  $("td[data-date]").droppable({
+    drop: function (e, ui) {
+      var drag = ui.draggable,
+        drop = $(this),
+        oldDate = drag.data("oldDate"), // Task date on drag
+        newDate = drop.data("date"), // Task date on drop
+        dragID = drag.data("userid"), // Task userid on drag
+        dropID = drop.data("userid"); // Task userid on drop
+      if (oldDate != newDate || dragID != dropID) {
+        $(drag).detach().css({ top: 0, left: 0 }).appendTo(drop);
+        $(drag).data("userid", dropID); // Update task userid
+      } else {
+        return $(drag).css({ top: 0, left: 0 }); // Return task to old position
+      }
+    }
+  });
+  
+  // show EDIT and TRASH tools
+  $(".drag").hover(
+    function () {
+      var isAdmin = 1; // Ability to hide or show edit and delete options
+      if (isAdmin == 1) {
+        $(this)
+          .css("z-index", "999")
+          .prepend(
+            '<div class="opt-tools"><div class="opt-edit"><i class="fas fa-pen"></i></div><div class="opt-trash"><i class="fas fa-trash"></i></div></div>'
+          );
+      }
+    },
+    function () {
+      //When mouse hovers out DIV remove tools
+      $(this).css("z-index", "0").find(".opt-tools").remove();
+    }
+  );
+  
+  // Show modal to edit task
+  $(document).on("click", ".opt-edit", function () {
+    // Get task ID and DATE from DATA attribute
+    var taskid = $(this).parent().parent().data("taskid"),
+      userid = $(this).parent().parent().data("userid");
+    // Get DATE
+    var date = $(this).closest("td").data("date");
+    // insert data to Modal
+    $("#ktxt")[0].jscolor.fromString("FFFFFF");
+    $("#kbg")[0].jscolor.fromString("8E8E8E");
+    $("#demotaak2").css("color", "#FFFFFF");
+    $("#demotaak1").css("border-left-color", "#8E8E8E");
+    $("#demotaak2").css("background-color", "#8E8E8E");
+    $("#edittask").modal("show");
+  });
+  
+  // Modal remove task ?
+  $(document).on("click", ".opt-trash", function () {
+    var taskid = $(this).parent().parent().data("taskid");
+  
+    $("#taskdelid").val(taskid);
+    $("#modal-delete").html(
+      "Are you sure you want to delete task ID <b>" + taskid + "</b>?"
+    );
+    $("#deletetask").modal("show");
+  });
+  
+  // Remove task after conformation
+  $(document).on("click", "#confdelete", function () {
+    var taskid = $("#taskdelid").val();
+    $("div")
+      .find("[data-taskid=" + taskid + "]")
+      .remove();
+    $("#deletetask").modal("hide");
+  });
+  
+  function changeColor(id, c) {
+    if (id == "ctxt") {
+      $("#demotaak2").css("color", "#" + c);
+    } else if (id == "cbg") {
+      $("#demotaak1").css("border-left-color", "#" + c);
+      $("#demotaak2").css("background-color", "#" + c);
+    }
+    return false;
+  }
+  
+    </script>
+</body>
+
+</html>

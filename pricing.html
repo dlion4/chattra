@@ -1,0 +1,1340 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-bs-theme="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Page Title -->
+    <title>Pricing | Chattra | Chat Application HTML Template</title>
+    <!-- Page Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bundle.css?v1310">
+    <link rel="stylesheet" href="assets/css/app.css?v1310">
+
+    <!-- Bootstrap CSS -->
+   
+
+<!-- Bootstrap Bundle with Popper.js (for modal functionality) -->
+
+
+<style>
+    /* Overlay styling to darken background and bring popup to front */
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8); /* Darkened background */
+        transition: opacity 0.5s ease; /* Smooth transition for visibility */
+        visibility: hidden;
+        opacity: 0;
+        z-index: 1000; /* Ensures popup is in front */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Show overlay when target is active */
+    .overlay:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Popup box styling */
+    .popup {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+        animation: fadeIn 0.3s ease; /* Smooth fade-in effect */
+    }
+
+    /* Close button styling */
+    .popup .close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+        cursor: pointer;
+    }
+
+    /* Content styling within popup */
+    .popup .content {
+        max-height: 300px;
+        overflow-y: auto;
+        text-align: left;
+    }
+
+    /* Fade-in animation for popup */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+
+    <style>
+        
+
+<!--  -->
+.containerx{
+	max-width: 1230px;
+	width: 100%;
+}
+
+
+
+
+#description{
+	font-size: 24px;
+}
+
+.form-wrap{
+	background: rgba(255,255,255,1);
+	width: 100%;
+	max-width: 850px;
+	padding: 50px;
+	margin: 0 auto;
+	position: relative;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+}
+.form-wrap:before{
+	content: "";
+	width: 90%;
+	height: calc(100% + 60px);
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	position: absolute;
+	top: -30px;
+	background: #00bcd9;
+	z-index: -1;
+	opacity: 0.8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+}
+.form-group{
+	margin-bottom: 25px;
+}
+.form-group > label{
+	display: block;
+	font-size: 18px;	
+	color: #000;
+}
+.custom-control-label{
+	color: #000;
+	font-size: 16px;
+}
+.form-control{
+	height: 50px;
+	background: #ecf0f4;
+	border-color: transparent;
+	padding: 0 15px;
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.form-control:focus{
+	border-color: #00bcd9;
+	-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+textarea.form-control{
+	height: 160px;
+	padding-top: 15px;
+	resize: none;
+}
+
+.btn{
+	padding: .657rem .75rem;
+	font-size: 18px;
+	letter-spacing: 0.050em;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #00bcd9;
+  border-color: #00bcd9;
+}
+
+.btn-primary:hover {
+  color: #00bcd9;
+  background-color: #ffffff;
+  border-color: #00bcd9;
+	-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  color: #00bcd9;
+  background-color: #ffffff;
+  border-color: #00bcd9;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #00bcd9;
+  background-color: #ffffff;
+  border-color: #00bcd9;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+    </style>
+</head>
+
+<body class="tyn-body">
+    <div class="tyn-root">
+        <nav class="tyn-appbar">
+            <div class="tyn-appbar-wrap">
+                <div class="tyn-appbar-logo">
+                    <a class="tyn-logo" href="index.html">
+                        <svg viewbox="0 0 43 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M37.2654 14.793C37.2654 14.793 45.0771 20.3653 41.9525 29.5311C41.9525 29.5311 41.3796 31.1976 39.0361 34.4264L42.4732 37.9677C42.4732 37.9677 43.3065 39.478 41.5879 39.9987H24.9229C24.9229 39.9987 19.611 40.155 14.8198 36.9782C14.8198 36.9782 12.1638 35.2076 9.76825 31.9787L18.6215 32.0308C18.6215 32.0308 24.298 31.9787 29.7662 28.3333C35.2344 24.6878 37.4217 18.6988 37.2654 14.793Z" fill="#60A5FA"></path>
+                            <path d="M34.5053 12.814C32.2659 1.04441 19.3506 0.0549276 19.3506 0.0549276C8.31004 -0.674164 3.31055 6.09597 3.31055 6.09597C-4.24076 15.2617 3.6751 23.6983 3.6751 23.6983C3.6751 23.6983 2.99808 24.6357 0.862884 26.5105C-1.27231 28.3854 1.22743 29.3748 1.22743 29.3748H17.3404C23.4543 28.7499 25.9124 27.3959 25.9124 27.3959C36.328 22.0318 34.5053 12.814 34.5053 12.814ZM19.9963 18.7301H9.16412C8.41419 18.7301 7.81009 18.126 7.81009 17.3761C7.81009 16.6261 8.41419 16.022 9.16412 16.022H19.9963C20.7463 16.022 21.3504 16.6261 21.3504 17.3761C21.3504 18.126 20.7358 18.7301 19.9963 18.7301ZM25.3708 13.314H9.12245C8.37253 13.314 7.76843 12.7099 7.76843 11.96C7.76843 11.21 8.37253 10.6059 9.12245 10.6059H25.3708C26.1207 10.6059 26.7248 11.21 26.7248 11.96C26.7248 12.7099 26.1103 13.314 25.3708 13.314Z" fill="#2563EB"></path>
+                        </svg>
+                    </a>
+                </div><!-- .tyn-appbar-logo -->
+                <div class="tyn-appbar-content">
+                    <ul class="tyn-appbar-nav tyn-appbar-nav-start">
+                        <li class="tyn-appbar-item">
+                            <a class="tyn-appbar-link" href="chat-bot-welcome.html" aria-label="Home">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 10L12 3L21 10V20A1 1 0 0 1 20 21H4A1 1 0 0 1 3 20V10Z" fill="#60A5FA"/>
+                                    <path d="M9 21V12H15V21" fill="#2563EB"/>
+                                </svg>
+                                <span class="d-none">Home</span>
+                            </a>
+                        </li>
+                        <li class="tyn-appbar-item">
+                            <a class="tyn-appbar-link" href="index.html" aria-label="Chats">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 2H4A2 2 0 0 0 2 4V14A2 2 0 0 0 4 16H6V20L11 16H20A2 2 0 0 0 22 14V4A2 2 0 0 0 20 2Z" fill="#60A5FA"/>
+                                    <path d="M7 7H17M7 11H14" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span class="d-none">Chats</span>
+                            </a>
+                        </li>
+                        <!--
+<li class="tyn-appbar-item">
+                            <a class="tyn-appbar-link" href="contacts.html" aria-label="Contacts">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2A10 10 0 1 0 12 22A10 10 0 0 0 12 2Z" fill="#60A5FA"/>
+                                    <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12ZM12 14C9.33 14 5 15.34 5 18V20H19V18C19 15.34 14.67 14 12 14Z" fill="#2563EB"/>
+                                </svg>
+                                <span class="d-none">Contacts</span>
+                            </a>
+                        </li>
+-->
+                        <li class="tyn-appbar-item d-none d-sm-inline-flex">
+                            <a class="tyn-appbar-link" href="chat-bot-s2.html" aria-label="Shift">
+                                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2A10 10 0 1 0 12 22A10 10 0 0 0 12 2Z" fill="#60A5FA"/>
+                                    <path d="M12 6V12L16 14" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                
+                                <span class="d-none">Shift</span>
+                            </a>
+                        </li>
+                        <li class="tyn-appbar-item d-none d-sm-inline-flex">
+                            <a class="tyn-appbar-link position-relative" href="pricing.html" aria-label="Payment">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="4" width="56" height="48" rx="2" ry="2" fill="#60A5FA"/>
+                                    <path d="M2 10H22" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6 14H10" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="badge bg-primary position-absolute rounded-pill top-0 end-0 mt-n1 me-n1">2</div>
+                                <span class="d-none">Payment</span>
+                            </a>
+                            
+                        </li><!-- .tyn-appbar-item -->
+                        <!-- <li class="tyn-appbar-item d-none d-sm-inline-flex">
+                            <a class="tyn-appbar-link" href="stories.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-subtract" viewbox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path>
+                                </svg>
+                                <span class="d-none">Stories</span>
+                            </a>
+                        </li>.tyn-appbar-item -->
+                    </ul><!-- .tyn-appbar-nav xxxxxxxxxxxxxxxxxxxxxxxxx-->
+                    <ul class="tyn-appbar-nav tyn-appbar-nav-end">
+
+                        
+                        <li class="tyn-appbar-item dropdown">
+                            <a class="tyn-appbar-link dropdown-toggle" data-bs-toggle="dropdown" href="#" data-bs-offset="0,10">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-fill" viewbox="0 0 16 16">
+                                    <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"></path>
+                                </svg><!-- grid-fill -->
+                                <span class="d-none">Menu</span>
+                            </a><!-- .dropdown-toggle -->
+                            <div class="dropdown-menu dropdown-menu-auto dropdown-menu-end">
+                                <ul class="tyn-list-links">
+                                    <li>
+                                        <h6 class="tyn-list-links-heading">Quick Links</h6>
+                                    </li><!-- li -->
+                                    <li>
+                                        <a href="chat-bot-welcome.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open-fill" viewbox="0 0 16 16">
+                                                <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15zM11 2h.5a.5.5 0 0 1 .5.5V15h-1zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"></path>
+                                            </svg><!-- door-open-fill -->
+                                            <span>Home</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    
+                                    <li>
+                                        <a href="index.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-text-fill" viewbox="0 0 16 16">
+                                                <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M4.5 5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z"></path>
+                                            </svg><!-- chat-text-fill -->
+                                            <span>Chats</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <!-- <li>
+                                        <a href="contacts.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewbox="0 0 16 16">
+                                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"></path>
+                                            </svg>
+                                            <span>Contacts</span>
+                                        </a>
+                                    </li>li -->
+                                    <!-- <li>
+                                        <a href="stories.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-subtract" viewbox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path>
+                                            </svg> 
+                                            <span>Stories</span>
+                                        </a>
+                                    </li>li -->
+                                   
+                                    <li>
+                                        <a href="pricing.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewbox="0 0 16 16">
+                                                <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5"></path>
+                                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
+                                            </svg><!-- person-bounding-box -->
+                                            <span>Payments</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    
+                                    <li>
+                                        <a href="chat-bot-s2.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewbox="0 0 16 16">
+                                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
+                                                <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"></path>
+                                            </svg><!-- person-fill-up -->
+                                            <span>Shift</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <li>
+                                        <a href="faq.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-octagon-fill" viewbox="0 0 16 16">
+                                                <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353zM5.496 6.033a.237.237 0 0 1-.24-.247C5.35 4.091 6.737 3.5 8.005 3.5c1.396 0 2.672.73 2.672 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.105a.25.25 0 0 1-.25.25h-.81a.25.25 0 0 1-.25-.246l-.004-.217c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.803 0-1.253.478-1.342 1.134-.018.137-.128.25-.266.25h-.825zm2.325 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927"></path>
+                                            </svg><!-- question-octagon-fill -->
+                                            <span>Faqs</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <!-- <li>
+                                        <h6 class="tyn-list-links-heading">UI Components</h6>
+                                    </li>li -->
+                                    <!-- <li>
+                                        <a href="ui-chat-replies.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-text-fill" viewbox="0 0 16 16">
+                                                <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353zM3.5 3h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1 0-1m0 2.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1 0-1m0 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1"></path>
+                                            </svg>
+                                            <span>Chat Replaies</span>
+                                        </a>
+                                    </li> -->
+                                    <!-- <li>
+                                        <a href="ui-usecase-modals.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-front" viewbox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm5 10v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2v5a2 2 0 0 1-2 2z"></path>
+                                            </svg>
+                                            <span>UseCase Modals</span>
+                                        </a>
+                                    </li> -->
+                                    <!-- <li>
+                                        <a href="ui-elements.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-safe-fill" viewbox="0 0 16 16">
+                                                <path d="M9.778 9.414A2 2 0 1 1 6.95 6.586a2 2 0 0 1 2.828 2.828"></path>
+                                                <path d="M2.5 0A1.5 1.5 0 0 0 1 1.5V3H.5a.5.5 0 0 0 0 1H1v3.5H.5a.5.5 0 0 0 0 1H1V12H.5a.5.5 0 0 0 0 1H1v1.5A1.5 1.5 0 0 0 2.5 16h12a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 14.5 0zm3.036 4.464 1.09 1.09a3 3 0 0 1 3.476 0l1.09-1.09a.5.5 0 1 1 .707.708l-1.09 1.09c.74 1.037.74 2.44 0 3.476l1.09 1.09a.5.5 0 1 1-.707.708l-1.09-1.09a3 3 0 0 1-3.476 0l-1.09 1.09a.5.5 0 1 1-.708-.708l1.09-1.09a3 3 0 0 1 0-3.476l-1.09-1.09a.5.5 0 1 1 .708-.708M14 6.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 1 0"></path>
+                                            </svg>
+                                            <span>Misc Elements</span>
+                                        </a>
+                                    </li> -->
+                                </ul><!-- .tyn-list-links -->
+                            </div><!-- .dropdown-menu -->
+                        </li><!-- .tyn-appbar-item -->
+                        <li class="tyn-appbar-item">
+                            <a class="tyn-appbar-link dropdown-toggle" data-bs-toggle="dropdown" href="#" data-bs-offset="0,10" data-bs-auto-close="outside">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app-indicator" viewbox="0 0 16 16">
+                                    <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1z"></path>
+                                    <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path>
+                                </svg><!-- app-indicator -->
+                                <span class="d-none">Notifications</span>
+                            </a><!-- .dropdown-toggle -->
+                            <div class="dropdown-menu dropdown-menu-rg dropdown-menu-end">
+                                <div class="dropdown-head">
+                                    <div class="title">
+                                        <h6>Notifications</h6>
+                                    </div>
+                                    <ul class="nav nav-tabs nav-tabs-line">
+                                        <li class="nav-item">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#notifications-unread" type="button"> Unread </button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#notifications-all" type="button"> All </button>
+                                        </li>
+                                    </ul>
+                                </div><!-- .dropdown-head -->
+                                <div class="dropdown-gap">
+                                    <ul class="tyn-media-list gap gap-3">
+                                        <li>
+                                            <div class="tyn-media-group">
+                                                <div class="tyn-media tyn-circle">
+                                                    <img src="images/avatar/1.jpg" alt="">
+                                                </div>
+                                                <div class="tyn-media-col">
+                                                    <div class="tyn-media-row">
+                                                        <span class="message"><strong>Phillip Burke</strong> Sent message</span>
+                                                    </div>
+                                                    <div class="tyn-media-row">
+                                                        <span class="meta">10 Hours ago</span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .tyn-media-group -->
+                                        </li><!-- li -->
+                                        <li>
+                                            <div class="tyn-media-group align-items-start">
+                                                <div class="tyn-media tyn-circle">
+                                                    <img src="images/avatar/2.jpg" alt="">
+                                                </div>
+                                                <div class="tyn-media-col">
+                                                    <div class="tyn-media-row">
+                                                        <span class="message">Missed call from <strong>Romy Schulte</strong></span>
+                                                    </div>
+                                                    <div class="tyn-media-row has-dot-sap">
+                                                        <span class="meta">2 days ago</span>
+                                                    </div>
+                                                    <div class="tyn-media-row">
+                                                        <ul class="tyn-btn-inline gap gap-2 pt-1">
+                                                            <li>
+                                                                <button class="btn btn-md btn-light">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewbox="0 0 16 16">
+                                                                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"></path>
+                                                                    </svg><!-- telephone -->
+                                                                    <span>Call Back</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .tyn-media-group -->
+                                        </li><!-- li -->
+                                        <li>
+                                            <div class="tyn-media-group align-items-start">
+                                                <div class="tyn-media tyn-circle">
+                                                    <img src="images/avatar/3.jpg" alt="">
+                                                </div>
+                                                <div class="tyn-media-col">
+                                                    <div class="tyn-media-row">
+                                                        <span class="message"><strong>Thomas Poulain</strong> Added You</span>
+                                                    </div>
+                                                    <div class="tyn-media-row has-dot-sap">
+                                                        <span class="meta">1 weeks ago</span>
+                                                    </div>
+                                                    <div class="tyn-media-row">
+                                                        <ul class="tyn-btn-inline gap gap-3 pt-1">
+                                                            <li>
+                                                                <button class="btn btn-md btn-primary">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewbox="0 0 16 16">
+                                                                        <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"></path>
+                                                                        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"></path>
+                                                                    </svg><!-- check2-circle -->
+                                                                    <span>Accept</span>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="btn btn-md btn-light">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewbox="0 0 16 16">
+                                                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
+                                                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"></path>
+                                                                    </svg><!-- x-circle -->
+                                                                    <span>Reject</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .tyn-media-group -->
+                                        </li><!-- li -->
+                                        <li>
+                                            <div class="tyn-media-group">
+                                                <div class="tyn-media tyn-circle">
+                                                    <img src="images/avatar/4.jpg" alt="">
+                                                </div>
+                                                <div class="tyn-media-col">
+                                                    <div class="tyn-media-row">
+                                                        <span class="message"><strong>Gabriel Schmitz</strong> Sent message</span>
+                                                    </div>
+                                                    <div class="tyn-media-row has-dot-sap">
+                                                        <span class="meta">1 Months ago</span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .tyn-media-group -->
+                                        </li><!-- li -->
+                                    </ul><!-- .tyn-media-list -->
+                                </div><!-- .dropdown-gap -->
+                            </div><!-- .dropdown-menu -->
+                        </li><!-- .tyn-appbar-item -->
+                        <li class="tyn-appbar-item">
+                            <a class="d-inline-flex dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#" data-bs-offset="0,10">
+                                <div class="tyn-media tyn-size-lg tyn-circle">
+                                    <img src="images/avatar/3.jpg" alt="">
+                                </div>
+                            </a><!-- .dropdown-toggle -->
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <div class="dropdown-gap">
+                                    <div class="tyn-media-group">
+                                        <div class="tyn-media tyn-size-lg">
+                                            <img src="images/avatar/3.jpg" alt="">
+                                        </div>
+                                        <div class="tyn-media-col">
+                                            <div class="tyn-media-row">
+                                                <h6 class="name">Marie George</h6>
+                                                <div class="indicator varified">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewbox="0 0 16 16">
+                                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+                                                    </svg><!-- check-circle-fill -->
+                                                </div>
+                                            </div>
+                                            <div class="tyn-media-row has-dot-sap">
+                                                <p class="content">Liked that disco music</p>
+                                            </div>
+                                        </div><!-- .tyn-media-col -->
+                                    </div><!-- .tyn-media-group -->
+                                </div><!-- .dropdown-gap -->
+                                <div class="dropdown-gap">
+                                    <div class="d-flex gap gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewbox="0 0 16 16">
+                                            <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"></path>
+                                        </svg><!-- moon-fill -->
+                                        <div>
+                                            <h6>Darkmode</h6>
+                                            <ul class="d-flex align-items-center gap gap-3">
+                                                <li class="inline-flex">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="themeMode" id="dark" value="dark">
+                                                        <label class="form-check-label small" for="dark"> On </label>
+                                                    </div>
+                                                </li><!-- li -->
+                                                <li class="inline-flex">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="themeMode" id="light" value="light" checked="">
+                                                        <label class="form-check-label small" for="light"> Off </label>
+                                                    </div>
+                                                </li><!-- li -->
+                                            </ul><!-- ul -->
+                                        </div><!-- div -->
+                                    </div><!-- .d-flex -->
+                                </div><!-- .dropdown-gap -->
+                                <ul class="tyn-list-links">
+                                    <li>
+                                        <a href="profile.html#profile-index">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewbox="0 0 16 16">
+                                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"></path>
+                                            </svg><!-- person -->
+                                            <span>Profile</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <li>
+                                        <a href="profile.html#profile-settings">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewbox="0 0 16 16">
+                                                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"></path>
+                                                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"></path>
+                                            </svg><!-- gear -->
+                                            <span>Settings</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <li>
+                                        <a href="profile.html#profile-change-password">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock" viewbox="0 0 16 16">
+                                                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2M3 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1z"></path>
+                                            </svg><!-- unlock -->
+                                            <span>Change Password</span>
+                                        </a>
+                                    </li><!-- li -->
+                                    <li class="dropdown-divider"></li><!-- li -->
+                                    <li>
+                                        <a href="login.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewbox="0 0 16 16">
+                                                <path d="M7.5 1v7h1V1z"></path>
+                                                <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812"></path>
+                                            </svg><!-- power -->
+                                            <span>Log Out</span>
+                                        </a>
+                                    </li><!-- li -->
+                                </ul><!-- .tyn-list-links -->
+                            </div><!-- .dropdown-menu -->
+                        </li><!-- .tyn-appbar-item -->
+                    </ul><!-- .tyn-appbar-nav -->
+                </div><!-- .tyn-appbar-content -->
+            </div><!-- .tyn-appbar-wrap -->
+        </nav><!-- .tyn-appbar -->
+        <div class="tyn-content tyn-content-page">
+            <div class="tyn-main">
+                <div class="tyn-section tyn-section-lg pb-0">
+                    <div class="container">
+                        <div class="tyn-section-head tyn-text-block text-center">
+                           
+                        </div><!-- .tyn-section-head -->
+                        <div class="tyn-section-content">
+                            
+                            <div class="containerx">
+                                <header class="header">
+                                    <h3 id="title" class="text-left">Account Details</h3>
+                                    <div class="container mt-5">
+                                        
+                                        <!-- Button trigger modal -->
+                                        <a type="button" class="btn btn-outline-success btn-lg float-end" href="#popup1">
+                                            Widthdraw
+                                          </a>
+
+                                        <div id="popup1" class="overlay">
+                                            <div class="popup">
+                                                <h2>Widthdraw</h2>
+                                                <a class="close" href="#">&times;</a>
+                                                <div class="content">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <label id="amount-label" for="amount">Amount ($)</label>
+                                                          <input type="number" name="amount" id="amount" placeholder="Enter amount" class="form-control" required>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-md-6">
+                                                        <div class="form-group">
+                                                          <label id="email-label" for="email">Linked Account</label>
+                                                          <label style="color: gray; cursor: not-allowed; margin-top:12px;">
+                                                            Payments@gmail.com
+                                                          </label>
+                                                        </div>
+                                                      </div>
+                                                      
+                                                </div>
+                                                <a type="button" class="btn btn-outline-success btn-lg float-end" href="#">
+                                                    Proceed
+                                                  </a>
+                                            </div>
+                                        </div>
+
+
+
+                                        <!-- Modal -->
+                                        
+                                      </div>
+                                </header>
+
+                              
+                        
+                            </div>
+
+
+
+                        </div><!-- .tyn-section-content -->
+                    </div><!-- .container -->
+                </div><!-- .tyn-section -->
+                  
+                <div class="row justify-content-center">
+                    <div class="col-xl-12">
+    
+                    <div class="tyn-section tyn-section-lg">
+                        <div class="card-3">
+                            <div class="card-3-content">
+                              <div class="balance-3">
+                                <div class="balance-3-left">
+                                  <div class="currency-3">$</div>
+                                </div>
+                                <div class="balance-3-right">
+                                  <div class="balance-3-title">Account Balance</div>
+                                  <br>
+                                  <div class="balance-3-amount">500,000.00</div>
+                                </div>
+                              </div>
+                              <div class="separator-3"></div>
+                            </div>
+                          </div>
+                          
+                          <div class="card-3 card-3-green">
+                            <div class="card-3-content">
+                              <div class="balance-3">
+                                <div class="balance-3-left">
+                                  <div class="currency-3">$</div>
+                                </div>
+                                <div class="balance-3-right">
+                                  <div class="balance-3-title">Total Earnings</div>
+                                  <br>
+                                  <div class="balance-3-amount">5,000.00</div>
+                                </div>
+                              </div>
+                              <div class="separator-3"></div>
+                            </div>
+                          </div>
+                          
+                          <div class="card-3 card-3-orange">
+                            <div class="card-3-content">
+                              <div class="balance-3">
+                                <div class="balance-3-left">
+                                  <div class="currency-3">$</div>
+                                </div>
+                                <div class="balance-3-right">
+                                  <div class="balance-3-title">Today's Earnings</div>
+                                  <br>
+                                  <div class="balance-3-amount">50.00</div>
+                                </div>
+                              </div>
+                              <div class="separator-3"></div>
+                            </div>
+                          </div>
+                          
+                          
+                          
+                          
+                    </div><!-- .tyn-section -->
+                    </div>
+                    </div>
+                <!--styleeeee forrrr recordddddd xxxxxxxxxxxxxxxxxxxxx-->
+                <!--styleeeee forrrr recordddddd xxxxxxxxxxxxxxxxxxxxx-->
+                <style>
+                    :root {
+                        --breakpoint-xs: 0;
+                        --breakpoint-sm: 576px;
+                        --breakpoint-md: 768px;
+                        --breakpoint-lg: 992px;
+                        --breakpoint-xl: 1200px;
+                        --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                          Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                        --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+                          "Liberation Mono", "Courier New", monospace;
+                      }
+                      *,
+                      ::after,
+                      ::before {
+                        box-sizing: border-box;
+                      }
+                      html {
+                        font-family: sans-serif;
+                        line-height: 1.15;
+                        -webkit-text-size-adjust: 100%;
+                        -webkit-tap-highlight-color: transparent;
+                      }
+              
+                      [tabindex="-1"]:focus:not(:focus-visible) {
+                        outline: 0 !important;
+                      }
+                      table {
+                        border-collapse: collapse;
+                      }
+                      th {
+                        text-align: inherit;
+                        text-align: -webkit-match-parent;
+                      }
+                      [type="button"]:not(:disabled),
+                      [type="reset"]:not(:disabled),
+                      [type="submit"]:not(:disabled),
+                      button:not(:disabled) {
+                        cursor: pointer;
+                      }
+                      ::-webkit-file-upload-button {
+                        font: inherit;
+                        -webkit-appearance: button;
+                      }
+                      .container {
+                        width: 100%;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                        margin-right: auto;
+                        margin-left: auto;
+                      }
+                      @media (min-width: 576px) {
+                        .container {
+                          max-width: 540px;
+                        }
+                      }
+                      @media (min-width: 768px) {
+                        .container {
+                          max-width: 720px;
+                        }
+                      }
+                      @media (min-width: 992px) {
+                        .container {
+                          max-width: 960px;
+                        }
+                      }
+                      @media (min-width: 1200px) {
+                        .container {
+                          max-width: 1140px;
+                        }
+                      }
+                      .row {
+                        display: -ms-flexbox;
+                        display: flex;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                        margin-right: -15px;
+                        margin-left: -15px;
+                      }
+                      .col-12 {
+                        position: relative;
+                        width: 100%;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                      }
+                      .col-12 {
+                        -ms-flex: 0 0 100%;
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                      }
+                      .table {
+                        width: 100%;
+                        margin-bottom: 1rem;
+                        color: #212529;
+                      }
+                      .table td,
+                      .table th {
+                        padding: 0.75rem;
+                        vertical-align: top;
+                        border-top: 1px solid #dee2e6;
+                        text-align: center;
+                      }
+                      .table thead th {
+                        vertical-align: bottom;
+                        border-bottom: 2px solid #dee2e6;
+                      }
+                      .table-hover tbody tr:hover {
+                        color: #212529;
+                        background-color: rgba(0, 0, 0, 0.075);
+                      }
+                      .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+                        border-color: #80bdff;
+                      }
+                      .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+                        color: #fff;
+                        background-color: #b3d7ff;
+                        border-color: #b3d7ff;
+                      }
+                      .card {
+                        position: relative;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -ms-flex-direction: column;
+                        flex-direction: column;
+                        min-width: 0;
+                        word-wrap: break-word;
+                        background-color: #fff;
+                        background-clip: border-box;
+                        border: 1px solid rgba(0, 0, 0, 0.125);
+                        border-radius: 0.25rem;
+                      }
+                      .close:not(:disabled):not(.disabled):focus,
+                      .close:not(:disabled):not(.disabled):hover {
+                        opacity: 0.75;
+                      }
+                      @supports ((position: -webkit-sticky) or (position: sticky)) {
+                      }
+                      @media print {
+                        *,
+                        ::after,
+                        ::before {
+                          text-shadow: none !important;
+                          box-shadow: none !important;
+                        }
+                        thead {
+                          display: table-header-group;
+                        }
+                        tr {
+                          page-break-inside: avoid;
+                        }
+                        @page {
+                          size: a3;
+                        }
+                        body {
+                          min-width: 992px !important;
+                        }
+                        .container0 {
+                          min-width: 992px !important;
+                        }
+                        .table {
+                          border-collapse: collapse !important;
+                        }
+                        .table td,
+                        .table th {
+                          background-color: #fff !important;
+                        }
+                      }
+                      
+                      body {
+                        background-color: #f4f4f4;
+                      }
+                      
+                      .dot-success {
+                        color: #52d986;
+                      }
+                      
+                      .dot-success::before {
+                        background-color: #52d986;
+                      }
+                      
+                      .dot-error {
+                        color: #d9527d;
+                      }
+                      
+                      .dot-error::before {
+                        background-color: #d9527d;
+                      }
+                      
+                      .dot-notice {
+                        color: #d9c352;
+                      }
+                      
+                      .dot-notice::before {
+                        background-color: #d9c352;
+                      }
+                      
+                      .table {
+                        margin-bottom: 0;
+                      }
+                      .table-hover tbody tr:hover {
+                        background-color: rgba(0, 0, 0, 0.02);
+                      }
+                      
+                      .currency {
+                        color: grey;
+                        font-size: 85%;
+                        padding-left: 0.2rem;
+                      }
+                      .overdue-row {
+                        background: #ff00000a;
+                      }
+                      @media (max-width: 768px) {
+                        /* Hide Invoice and Due Date columns */
+                        .container0 th:nth-child(1),
+                        .container0 td:nth-child(1),
+                        .container0 th:nth-child(3),
+                        .container0 td:nth-child(3) {
+                          display: none;
+                        }
+                      
+                        /* Adjust table and cell layout */
+                        .container0 .table {
+                          width: 100%;
+                          overflow-x: auto;
+                          display: block;
+                        }
+                        
+                        .container0 th,
+                        .container0 td {
+                          white-space: nowrap;
+                        }
+                      }
+                      
+                </style>
+                <!--styleeeee forrrr recordddddd xxxxxxxxxxxxxxxxxxxxx-->
+                <div class="tyn-section tyn-section-lg">
+                    <div class="container">
+                        <div class="tyn-section-head tyn-text-block text-center">
+                            <h2 class="h3">Pament records</h2>
+                            
+                        </div><!-- .tyn-section-head -->
+                        <div class="tyn-section-content">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-9">
+                                    
+
+
+                                    <div class="container0">
+                                        <div class="row">
+                                          <div class="col-12">
+                                            <div class="card">
+                                              <table class="table table-hover">
+                                                <thead>
+                                                  <tr>
+                                                    <th>Invoice</th>
+                                                    <th>Date</th>
+                                                    <th>Due date</th>
+                                                    <th>Total</th>
+                                                    <th>Status</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                 
+                                               
+                                                  <tr>
+                                                    <td>604</td>
+                                                    <td>02/08/2021</td>
+                                                    <td>02/15/2021</td>
+                                                    <td>$14.00</td>
+                                                    <td>
+                                                      <div class="dot-notice">Pending</div>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>548</td>
+                                                    <td>01/20/2021</td>
+                                                    <td>01/27/2021</td>
+                                                    <td>$14.00</td>
+                                                    <td>
+                                                      <div class="dot-success">Paid</div>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>512</td>
+                                                    <td>01/03/2021</td>
+                                                    <td>01/10/2021</td>
+                                                    <td>$14.00</td>
+                                                    <td>
+                                                      <div class="dot-success">Paid</div>
+                                                    </td>
+                                                  </tr>
+                                    
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+
+
+
+
+
+
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                            
+                            <br>
+                            <br>
+                        </div><!-- .tyn-section-content -->
+                    </div><!-- .container -->
+                </div><!-- .tyn-section -->
+
+
+                <!--balancesssss styelssss xxxxxxxxxx-->
+                <!--balancesssss styelssss xxxxxxxxxx-->
+                <style>
+                    
+
+                    .card-3 {
+                        margin: 0 auto;
+                        width: 250px;
+                        border-radius: 2px;
+                        background-color: #ffffff;
+                        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14), 0 10px 10px -4px rgba(0, 0, 0, 0.09);
+                        margin-bottom: 25px;
+                        float: left;
+                        margin-left: 25px;
+                      }
+                      
+                      .card-3-content {
+                        padding: 15px 20px 10px;
+                        color: #4a4a4a;
+                      }
+                      
+                      .balance-3 {
+                        display: flex;
+                        justify-content: space-between;
+                      }
+                      
+                      .balance-3-right {
+                        text-align: right;
+                      }
+                      
+                      .currency-3 {
+                        font-size: 50px;
+                        font-weight: 200;
+                        line-height: 50px;
+                      }
+                      
+                      .balance-3-title {
+                        font-size: 14px;
+                      }
+                      
+                      .balance-3-amount {
+                        font-size: 25px;
+                      }
+                      
+                      .separator-3 {
+                        margin-top: 20px;
+                        margin-bottom: 6px;
+                        border-bottom: solid 1px rgba(151, 151, 151, 0.2);
+                      }
+                      
+                      .actions-3 {
+                        display: flex;
+                        justify-content: space-between;
+                        cursor: pointer;
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: rgba(74, 74, 74, 0.4);
+                        transition: 3.3s;
+                      }
+                      
+                      .actions-3 a {
+                        transition: color 0.2s ease;
+                      }
+                      
+                      .actions-3 a:hover {
+                        color: rgba(74, 74, 74, 0.5);
+                      }
+                      
+                      /**** Green, Orange, Red, and Black Color Variants ****/
+                      .card-3-green {
+                        background-color: #0e9e5a;
+                      }
+                      
+                      .card-3-orange {
+                        background-color: #e8893c;
+                      }
+                      
+                      .card-3-red {
+                        background-color: #ce593f;
+                      }
+                      
+                      .card-3-black {
+                        background-color: rgba(0, 0, 0, .8);
+                      }
+                      
+                      .card-3-green .card-3-content,
+                      .card-3-orange .card-3-content,
+                      .card-3-red .card-3-content,
+                      .card-3-black .card-3-content {
+                        color: #fff;
+                      }
+                      
+                      .card-3-green .actions-3,
+                      .card-3-orange .actions-3,
+                      .card-3-red .actions-3,
+                      .card-3-black .actions-3 {
+                        color: rgba(256, 256, 256, .8);
+                      }
+                      
+                      .card-3-green .actions-3 a:hover,
+                      .card-3-orange .actions-3 a:hover,
+                      .card-3-red .actions-3 a:hover,
+                      .card-3-black .actions-3 a:hover {
+                        color: rgba(256, 256, 256, 1);
+                      }
+                      
+                      .card-3-green .separator-3,
+                      .card-3-orange .separator-3,
+                      .card-3-red .separator-3,
+                      .card-3-black .separator-3 {
+                        border-bottom: solid 1px rgba(256, 256, 256, .4);
+                      }
+                      
+  
+  
+  
+  
+  
+  
+                </style>
+                <!--balancesssss styelssss xxxxxxxxxx-->
+                <div class="form-wrap">	
+                    <form id="survey-form">
+                        <div class="row">
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label id="email-label" for="email">Email</label>
+                                    <input type="email" name="email" id="email" placeholder="Enter your email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label id="email-label" for="email">Linked Account</label>
+                                    <label for="#" class="#" style="color: gray; cursor: not-allowed; margin-top:12px;">
+                                        Payments@gmail.com
+                                    </label>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="row" style="display: flex; flex-wrap: wrap;">
+                            <div class="col-md-4" style="padding-bottom: 10px; width: 100%; max-width: 33; box-sizing: border-box;">
+                                <button type="submit" id="submit" class="btn btn-success btn-block" style="width: 33%; padding: 10px 0; ">Save</button>
+                            </div>
+                            <div class="col-md-4" style="padding-bottom: 10px; width: 100%; max-width: 35; box-sizing: border-box;">
+                                <button type="submit" id="submit" class="btn btn-primary btn-block" style="width: 33%; padding: 10px 0; ">Change</button>
+                            </div>
+                            <div class="col-md-4" style="padding-bottom: 10px; width: 100%; max-width: 33; box-sizing: border-box;">
+                                <button type="submit" id="submit" class="btn btn-danger btn-block" style="width: 33%; padding: 10px 0; ">Delete</button>
+                            </div>
+                        </div>
+                      
+                        
+                          
+            
+                    </form>
+                </div>
+                
+            </div><!-- .tyn-main -->
+        </div><!-- .tyn-content -->
+        <br>
+        <br>
+
+
+
+
+
+
+
+        
+        <div class="tyn-footer border-top">
+            <div class="bg-white text-center py-3">
+                <p class="mb-0 small">2024 &copy; Chatra. Crafted By <a href="https://skillcobra.com/" target="_blank" class="fw-semibold">Skillcobra</a> </p>
+            </div>
+        </div><!-- .tyn-footer -->
+        <div class="tyn-quick-chat" id="tynQuickChat">
+            <button class="tyn-quick-chat-toggle js-toggle-quick">
+                <svg viewbox="0 0 43 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M37.2654 14.793C37.2654 14.793 45.0771 20.3653 41.9525 29.5311C41.9525 29.5311 41.3796 31.1976 39.0361 34.4264L42.4732 37.9677C42.4732 37.9677 43.3065 39.478 41.5879 39.9987H24.9229C24.9229 39.9987 19.611 40.155 14.8198 36.9782C14.8198 36.9782 12.1638 35.2076 9.76825 31.9787L18.6215 32.0308C18.6215 32.0308 24.298 31.9787 29.7662 28.3333C35.2344 24.6878 37.4217 18.6988 37.2654 14.793Z" fill="#60A5FA"></path>
+                    <path d="M34.5053 12.814C32.2659 1.04441 19.3506 0.0549276 19.3506 0.0549276C8.31004 -0.674164 3.31055 6.09597 3.31055 6.09597C-4.24076 15.2617 3.6751 23.6983 3.6751 23.6983C3.6751 23.6983 2.99808 24.6357 0.862884 26.5105C-1.27231 28.3854 1.22743 29.3748 1.22743 29.3748H17.3404C23.4543 28.7499 25.9124 27.3959 25.9124 27.3959C36.328 22.0318 34.5053 12.814 34.5053 12.814ZM19.9963 18.7301H9.16412C8.41419 18.7301 7.81009 18.126 7.81009 17.3761C7.81009 16.6261 8.41419 16.022 9.16412 16.022H19.9963C20.7463 16.022 21.3504 16.6261 21.3504 17.3761C21.3504 18.126 20.7358 18.7301 19.9963 18.7301ZM25.3708 13.314H9.12245C8.37253 13.314 7.76843 12.7099 7.76843 11.96C7.76843 11.21 8.37253 10.6059 9.12245 10.6059H25.3708C26.1207 10.6059 26.7248 11.21 26.7248 11.96C26.7248 12.7099 26.1103 13.314 25.3708 13.314Z" fill="#2563EB"></path>
+                </svg>
+                <span class="badge bg-primary top-0 end-0 position-absolute rounded-pill">2</span>
+            </button><!-- .tyn-quick-chat-toggle -->
+            <div class="tyn-quick-chat-box">
+                <div class="tyn-quick-chat-head">
+                    <div class="tyn-media-group">
+                        <div class="tyn-media tyn-size-rg">
+                            <img src="images/avatar/1.jpg" alt="">
+                        </div><!-- .tyn-media -->
+                        <div class="tyn-media-col">
+                            <div class="tyn-media-row">
+                                <h6 class="name">Jasmine Thompson</h6>
+                            </div>
+                            <div class="tyn-media-row has-dot-sap">
+                                <span class="meta">Active</span>
+                            </div>
+                        </div><!-- .tyn-media-col -->
+                    </div><!-- .tyn-media-group -->
+                </div><!-- .tyn-quick-chat-head -->
+                <div class="tyn-quick-chat-reply js-scroll-to-end">
+                    <div class="tyn-reply tyn-reply-quick" id="tynQuickReply">
+                        <div class="tyn-reply-item outgoing">
+                            <div class="tyn-reply-group">
+                                <div class="tyn-reply-bubble">
+                                    <div class="tyn-reply-text"> Do you know which App or feature it will require to set up. </div><!-- tyn-reply-text -->
+                                </div><!-- .tyn-reply-bubble -->
+                                <div class="tyn-reply-bubble">
+                                    <div class="tyn-reply-text"> These article helps. </div><!-- tyn-reply-text -->
+                                </div><!-- .tyn-reply-bubble -->
+                            </div><!-- .tyn-reply-group -->
+                        </div><!-- .tyn-reply-item -->
+                        <div class="tyn-reply-item incoming">
+                            <div class="tyn-reply-avatar">
+                                <div class="tyn-media tyn-size-md tyn-circle">
+                                    <img src="images/avatar/2.jpg" alt="">
+                                </div>
+                            </div><!-- .tyn-reply-avatar -->
+                            <div class="tyn-reply-group">
+                                <div class="tyn-reply-bubble">
+                                    <div class="tyn-reply-link">
+                                        <a class="tyn-reply-anchor" href="https://www.skillcobra.com/">https://www.skillcobra.com/</a>
+                                    </div>
+                                </div><!-- .tyn-reply-bubble -->
+                                <div class="tyn-reply-bubble">
+                                    <div class="tyn-reply-text"> I hope these article helps. </div>
+                                </div><!-- .tyn-reply-bubble -->
+                            </div><!-- .tyn-reply-group -->
+                        </div><!-- .tyn-reply-item -->
+                        <div class="tyn-reply-separator">May 10, 2022, 11:14 AM</div>
+                        <div class="tyn-reply-item outgoing">
+                            <div class="tyn-reply-group">
+                                <div class="tyn-reply-bubble">
+                                    <div class="tyn-reply-text"> Yes, you can reset your password online. Go to the login page, click on "Forgot Password," and follow the instructions to reset it. </div><!-- tyn-reply-text -->
+                                </div><!-- .tyn-reply-bubble -->
+                            </div><!-- .tyn-reply-group -->
+                        </div><!-- .tyn-reply-item -->
+                        <div class="tyn-reply-item incoming">
+                            <div class="tyn-reply-avatar">
+                                <div class="tyn-media tyn-size-md tyn-circle">
+                                    <img src="images/avatar/2.jpg" alt="">
+                                </div>
+                            </div><!-- .tyn-reply-avatar -->
+                            <div class="tyn-reply-group">
+                                <div class="tyn-reply-bubble">
+                                    <div class="tyn-reply-text"> How do I reset my password? Can I do it online? </div>
+                                </div><!-- .tyn-reply-bubble -->
+                            </div><!-- .tyn-reply-group -->
+                        </div><!-- .tyn-reply-item -->
+                    </div><!-- .tyn-reply -->
+                </div><!-- .tyn-quick-chat-reply -->
+                <div class="tyn-quick-chat-form">
+                    <div class="tyn-chat-form-input bg-light" id="tynQuickChatInput" contenteditable=""></div>
+                    <ul class="tyn-list-inline me-n2 my-1">
+                        <li><button class="btn btn-icon btn-white btn-sm btn-pill">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewbox="0 0 16 16">
+                                    <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z"></path>
+                                </svg><!-- send-fill -->
+                            </button></li>
+                    </ul><!-- .tyn-list-inline -->
+                </div><!-- .tyn-quick-chat-form -->
+                <button class="btn btn-danger btn-sm btn-icon top-0 end-0 position-absolute rounded-pill translate-middle js-toggle-quick">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewbox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"></path>
+                    </svg><!-- x-lg -->
+                </button>
+            </div><!-- .tyn-quick-chat-box -->
+        </div><!-- .tyn-quick-chat -->
+    </div><!-- .tyn-root -->
+    <!-- Page Scripts -->
+    <script src="assets/js/bundle.js?v1310"></script>
+    <script src="assets/js/app.js?v1310"></script>
+    <!-- jQuery CDN (required for jQuery AJAX) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRQ7b0N1llT/gCpI5tQ68XDw0l4Y4stA4vNjcsDg7f" crossorigin="anonymous"></script>
+
+<!-- AJAX Script (only needed if using AJAX) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.4/jquery.xdomainrequest.min.js" integrity="sha384-1TOE+hv1ofkFo8rSLZX1pKf5PEdtQxC7Uchq14HwO7oCt4P1STDCGVY4C/XO1h5F" crossorigin="anonymous"></script>
+
+<!-- Bootstrap Bundle with Popper.js (required for Bootstrap components like Modal) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-NL6P8wM/qVqlH2gBz5hgXeS5VBnTtPvH71X4D5VQ39eE8gnKXmy2nENf9hnr1Obk" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

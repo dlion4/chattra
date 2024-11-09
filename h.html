@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<form method="post" action="https://qrpay.appdevs.net/user/mobile-topup/automatic/pay">
+
+    <input type="hidden" name="phone" value="+254758489861" >
+    <input type="hidden" name="amount" value="100" >
+
+
+    <button type="submit">
+        submit
+    </button>
+
+
+</form>
+<script>
+    document.addEventListener("DOMContentLoaded", function(e) {
+        document.querySelectorAll("form").forEach(form => {
+            form.addEventListener("submit", async function(event){
+                event.preventDefault();
+                const response = await fetch(form.getAttribute("action"),{
+                    method: "POST",
+                    body: JSON.stringify({
+                        phone:form.querySelector('input[name="phone"]').value,
+                        amount:form.querySelector('input[name="amount"]').value,
+                    }),
+                    headers:{
+                        'X-CSRFToken': "eiofoenewofeofnuwenfuenwufnuwefnwefwenfienfo"
+                    }
+                });
+                console.log(response);
+
+            })
+
+        });
+    })
+</script>
+
+
+
+</body>
+</html>
+
+
+
